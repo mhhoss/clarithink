@@ -4,6 +4,8 @@
 
 Clarithink helps you write a raw thought and understand what you actually mean — not store it, not expand it, just clarify it.
 
+🔗 [Live Demo](https://clarithink.netlify.app)
+
 ## Why Clarithink exists
 
 Throughout the day, thoughts hit me fast. I jot them down quickly — phone notes, random apps, wherever. But over time, they pile up disconnected. No thread. No clarity. And then my overthinking kicks in, trying to make sense of it all, which only makes it worse.
@@ -27,7 +29,7 @@ That's why I built the smallest possible version of that.
 ## Run locally
 
 ```bash
-git clone https://github.com/yourusername/clarithink
+git clone https://github.com/mhhoss/clarithink
 cd clarithink
 npm install
 npm run dev
