@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import ThoughtCard from './ThoughtCard'
+import ThoughtInput from './ThoughtInput'
 
 function App() {
   const [thought, setThought] = useState('')
@@ -61,7 +63,9 @@ function App() {
       fontFamily: "'Inter', sans-serif",
       padding: '48px 24px',
       maxWidth: '680px',
-      margin: '0 auto'
+      width: '100%',
+      margin: '0 auto',
+      boxSizing: 'border-box'
     }}>
       <h1 style={{
         fontSize: '20px',
@@ -76,111 +80,21 @@ function App() {
         marginBottom: '32px'
       }}>Write a thought. See it clearly.</p>
 
-      <div style={{ marginBottom: '40px' }}>
-        <textarea
-          value={thought}
-          onChange={(e) => setThought(e.target.value)}
-          placeholder="What's on your mind?"
-          rows={4}
-          style={{
-            width: '100%',
-            backgroundColor: '#1a1a1a',
-            border: '1px solid #2a2a2a',
-            borderRadius: '10px',
-            color: '#e8e8e8',
-            fontSize: '15px',
-            padding: '16px',
-            resize: 'none',
-            outline: 'none',
-            boxSizing: 'border-box',
-            lineHeight: '1.6'
-          }}
-        />
-        <button
-          onClick={handleSave}
-          style={{
-            marginTop: '12px',
-            backgroundColor: '#ffffff',
-            color: '#0f0f0f',
-            border: 'none',
-            borderRadius: '8px',
-            padding: '10px 20px',
-            fontSize: '14px',
-            fontWeight: '500',
-            cursor: 'pointer'
-          }}
-        >
-          Save thought
-        </button>
-      </div>
+      <ThoughtInput
+        thought={thought}
+        setThought={setThought}
+        handleSave={handleSave}
+      />
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {thoughts.map((t, index) => (
-          <div key={index} style={{
-            backgroundColor: '#1a1a1a',
-            border: '1px solid #2a2a2a',
-            borderRadius: '10px',
-            padding: '20px'
-          }}>
-            <p style={{
-              fontSize: '15px',
-              color: '#e8e8e8',
-              marginBottom: '12px',
-              lineHeight: '1.6'
-            }}>{t.text}</p>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-            }}>
-              <span style={{ fontSize: '12px', color: '#444' }}>{t.time}</span>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                {!t.expansion && (
-                  <button
-                    onClick={() => handleClarify(index)}
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: '1px solid #333',
-                      borderRadius: '6px',
-                      color: '#888',
-                      fontSize: '13px',
-                      padding: '6px 14px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Clarify →
-                  </button>
-                )}
-                <button
-                  onClick={() => handleDelete(index)}
-                  style={{
-                    backgroundColor: 'transparent',
-                    border: '1px solid #333',
-                    borderRadius: '6px',
-                    color: '#555',
-                    fontSize: '13px',
-                    padding: '6px 14px',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-            {t.expansion && (
-              <div style={{
-                marginTop: '16px',
-                paddingTop: '16px',
-                borderTop: '1px solid #2a2a2a',
-                fontSize: '14px',
-                color: '#aaa',
-                lineHeight: '1.7',
-                whiteSpace: 'pre-wrap'
-              }}>
-                {t.expansion}
-              </div>
-            )}
-          </div>
+          <ThoughtCard
+            key={index}
+            thought={t}
+            index={index}
+            onDelete={handleDelete}
+            onClarify={handleClarify}
+          />
         ))}
       </div>
     </div>
