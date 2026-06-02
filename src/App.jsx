@@ -44,7 +44,7 @@ function App() {
         messages: [
           {
             role: 'user',
-            content: `The user wrote a thought in Persian or English. Reply in the same language as the user's thought. Help them see what they're really saying — cut through the noise and find the core. Then ask one sharp question that challenges or deepens the thought. Do not comment on spelling, grammar, or writing style. Be concise, no headers: "${thoughts[index].text}"`
+            content: `You are a thinking clarity assistant. The user writes raw, unstructured thoughts. Your job is to transform the thought into clarity, not expand it, give advice, solve it, or provide therapy. Identify the core meaning and rewrite it clearly in one short paragraph. Keep the clarified thought concise and focused on the original meaning without introducing new ideas. Then ask one concise question that challenges a hidden assumption, bias, or missing perspective. Keep the question short and direct. Respond in the same language. Do not explain your reasoning. No bullet points or headers. Keep response to exactly 2 paragraphs. First paragraph: the clarified thought. Second paragraph: the question. User thought: "${thoughts[index].text}"`
           }
         ]
       })
