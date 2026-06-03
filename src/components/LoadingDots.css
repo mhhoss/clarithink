@@ -1,0 +1,26 @@
+.loading-dots {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #555;
+  animation: fade 1.2s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}

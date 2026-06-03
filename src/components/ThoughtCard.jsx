@@ -1,4 +1,5 @@
 import './ThoughtCard.css'
+import LoadingDots from './LoadingDots'
 
 function ThoughtCard({ thought, index, onDelete, onClarify }) {
   return (
@@ -30,11 +31,13 @@ function ThoughtCard({ thought, index, onDelete, onClarify }) {
         </div>
       </div>
 
-      {thought.expansion && (
+      {thought.expansion === 'Thinking...' ? (
+        <LoadingDots />
+      ) : thought.expansion ? (
         <div className='thought-card-expansion'>
           {thought.expansion}
         </div>
-      )}
+      ) : null}
 
     </div>
   )
