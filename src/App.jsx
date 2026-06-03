@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import ThoughtCard from './ThoughtCard'
-import ThoughtInput from './ThoughtInput'
+import ThoughtCard from './components/ThoughtCard'
+import ThoughtInput from './components/ThoughtInput'
 import './App.css'
 
 function App() {
