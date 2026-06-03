@@ -83,15 +83,19 @@ function App() {
       />
 
       <div className='thought-list'>
-        {thoughts.map((t, index) => (
-          <ThoughtCard
-            key={index}
-            thought={t}
-            index={index}
-            onDelete={handleDelete}
-            onClarify={handleClarify}
-          />
-        ))}
+        {thoughts.length === 0 ? (
+          <p className='empty-state'>No thoughts yet. Write your first one.</p>
+        ) : (
+          thoughts.map((t, index) => (
+            <ThoughtCard
+              key={index}
+              thought={t}
+              index={index}
+              onDelete={handleDelete}
+              onClarify={handleClarify}
+            />
+          ))
+        )}
       </div>
     </div>
   )
