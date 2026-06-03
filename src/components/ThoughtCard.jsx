@@ -39,6 +39,15 @@ function ThoughtCard({ thought, index, onDelete, onClarify }) {
         </div>
       ) : null}
 
+      {thought.expansion === 'No response from model' && (
+        <button
+          className='btn-retry'
+          onClick={() => onClarify(index)}
+        >
+          Retry →
+        </button>
+      )}
+
     </div>
   )
 }
