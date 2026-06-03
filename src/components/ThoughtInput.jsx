@@ -6,6 +6,11 @@ function ThoughtInput({ thought, setThought, handleSave }) {
       <textarea
         value={thought}
         onChange={(e) => setThought(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && e.ctrlKey) {
+            handleSave()
+          }
+        }}
         placeholder="What's on your mind?"
         rows={4}
         className='thought-input'
