@@ -7,6 +7,12 @@ function ThoughtCard({ thought, index, onDelete, onClarify }) {
     <div className='thought-card'>
         
       <p>{thought.text}</p>
+      
+      {thought.tag && (
+        <span className={`thought-tag tag-${thought.tag}`}>
+          {thought.tag}
+        </span>
+      )}
 
       <div className='thought-card-footer'>
         

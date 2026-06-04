@@ -45,12 +45,15 @@ function App() {
         messages: [
           {
             role: 'user',
-            content: `You are a thinking clarity assistant. The user writes raw thoughts.
+            content: `You are a thinking clarity tool. Your only job is to surface the hidden assumption behind the user's thought — not rewrite it, not explain it, not judge it.
 
-            1) Restate it neutrally. Remove overgeneralizations, emotional distortions, or cognitive biases — reduce certainty if needed.
-            2) Ask one short question that challenges a hidden assumption.
+            If the thought is philosophical, creative, or emotional — respect it as is. Only ask one sharp question that reveals what the user is taking for granted.
 
-            Respond in the same language. Exactly 2 paragraphs. No headers.
+            If the thought is practical or analytical — identify the core assumption and challenge it with one precise question.
+
+            Be brief. One short paragraph maximum. Then the question. Respond in the same language.
+
+            End with one word on a new line: "clear", "unclear", "assumption", "belief" or "question".
 
             User thought: "${thoughts[index].text}"`
           }
@@ -65,9 +68,16 @@ function App() {
       console.error('Failed to parse JSON:', err)
       data = null
     }
-
     const content = data?.choices?.[0]?.message?.content || "No response from model"
-    updated[index].expansion = content
+    const lines = content.trim().split('\n')
+    const lastLine = lines[lines.length - 1].trim().toLowerCase()
+    const validTags = ['confused', 'clear', 'assumption']
+    const tag = validTags.includes(lastLine) ? lastLine : null
+    const clarification = tag ? lines.slice(0, -1).join('\n').trim() : content
+
+    updated[index].expansion = clarification
+    updated[index].tag = tag
+
     setThoughts([...updated])
   }
 

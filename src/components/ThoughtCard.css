@@ -69,3 +69,26 @@
   cursor: pointer;
   margin-top: 8px;
 }
+
+.thought-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.tag-clear {
+  background-color: #1a2e1a;
+  color: #4caf50;
+}
+
+.tag-confused {
+  background-color: #2e1a1a;
+  color: #ef5350;
+}
+
+.tag-assumption {
+  background-color: #1a1a2e;
+  color: #7986cb;
+}
