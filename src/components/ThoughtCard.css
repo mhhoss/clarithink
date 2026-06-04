@@ -83,12 +83,22 @@
   color: #4caf50;
 }
 
-.tag-confused {
+.tag-unclear {
   background-color: #2e1a1a;
-  color: #ef5350;
+  color: #ffb74d;
 }
 
 .tag-assumption {
   background-color: #1a1a2e;
   color: #7986cb;
+}
+
+.tag-belief {
+  background-color: #1a2a2e;
+  color: #4dd0e1;
+}
+
+.tag-question {
+  background-color: #2a1a2e;
+  color: #ce93d8;
 }
