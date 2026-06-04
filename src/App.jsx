@@ -71,7 +71,7 @@ function App() {
     const content = data?.choices?.[0]?.message?.content || "No response from model"
     const lines = content.trim().split('\n')
     const lastLine = lines[lines.length - 1].trim().toLowerCase()
-    const validTags = ['confused', 'clear', 'assumption']
+    const validTags = ['clear', 'unclear', 'assumption', 'belief', 'question']
     const tag = validTags.includes(lastLine) ? lastLine : null
     const clarification = tag ? lines.slice(0, -1).join('\n').trim() : content
 
