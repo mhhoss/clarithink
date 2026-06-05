@@ -2,38 +2,36 @@
 
 **see your thoughts clearly.**
 
+*"It doesn't add new light. It just clears the lens."*
+
 Clarithink is a minimal tool I built to turn raw thoughts into clearer, more structured versions of themselves — before they get lost, distorted, or forgotten.
 
-🔗 [Live Demo](https://clarithink.netlify.app)
+🔗 [Try it with a thought now!](https://clarithink-live.netlify.app)
 
 ## Where this came from
 
-I have a habit of writing down thoughts throughout the day.
+I write down thoughts throughout the day.
 
 Small notes. Half-formed ideas. Mental noise I didn’t want to lose.
 
-Over time, I realized most of them never became anything useful. Not because they were bad ideas or concepts, but because they stayed in their raw form — unclear, fragmented, and disconnected from what I actually meant.
+Over time, I realized most of them never became anything useful. Not because they were bad ideas, but because they stayed in their raw form — unclear, fragmented, and disconnected from what I actually meant.
 
-At some point, I wasn’t struggling with remembering thoughts anymore. I was struggling with understanding them.
+Eventually, it wasn’t remembering thoughts that was hard. It was understanding them.
 
 Clarithink started from that gap.
 
-## What Clarithink does
+## How it works
 
-Clarithink is designed around a simple idea:
-
-A thought becomes more useful when it is clarified before it is stored.
+A thought becomes more useful when clarified before it is stored.
 
 - You write a raw thought
-- An LLM helps separate the signal from the noise
-- You get back a clearer interpretation of what you were trying to say
-- Along with a question that challenges the underlying assumption
+- An LLM extracts clarity without changing the meaning
+- You get a clearer version of the original thought
+- Plus a question that challenges its underlying assumption
 
-That’s it.
+No explanation, no expansion. Just a cleaner signal and a question.
 
-Not an explanation or expansion. Just a cleaner signal of the original thought and a question!
-
-The goal is not to build a system for managing thoughts, but to briefly clarify them at the moment they appear.
+The goal is not to manage thoughts, but to clarify them at the moment they appear.
 
 ## What it isn't
 
@@ -63,6 +61,6 @@ VITE_OPENROUTER_API_KEY=your_key_here
 
 ## Note
 
-This project is less about building a tool and more about exploring a simple question:
+Clarithink is an experiment:
 
-> What happens when a thought is forced to become clear before it settles into noise?
+> What happens when a thought is clarified before it becomes noise?
