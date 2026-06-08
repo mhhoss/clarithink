@@ -1,15 +1,23 @@
 .thought-card {
-  background-color: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 10px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 20px 24px;
+  transition: box-shadow 0.2s ease;
+}
+
+.thought-card:hover {
+  box-shadow: 0 8px 32px rgba(97, 53, 199, 0.1);
 }
 
 .thought-card p {
   font-size: 15px;
-  color: #e8e8e8;
+  color: #1a1a2e;
   margin-bottom: 12px;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .thought-card-footer {
@@ -19,86 +27,88 @@
 }
 
 .thought-card-time {
-  font-size: 12px;
-  color: #444;
+  font-size: 11px;
+  color: #9090b0;
+  letter-spacing: 0.3px;
 }
 
 .thought-card-buttons {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .thought-card-expansion {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 14px;
-  color: #aaa;
+  color: #4a4a6a;
   line-height: 1.7;
   word-break: break-word;
 }
 
-
-.btn-clarify {
+.btn-delete,
+.btn-retry {
   background-color: transparent;
-  border: 1px solid #333;
-  border-radius: 6px;
-  color: #888;
-  font-size: 13px;
-  padding: 6px 14px;
+  border: 1px solid rgba(97, 53, 199, 0.2);
+  border-radius: 8px;
+  color: #6135c7;
+  font-size: 12px;
+  padding: 4px 12px;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-delete:hover,
+.btn-retry:hover {
+  background: rgba(97, 53, 199, 0.08);
 }
 
 .btn-delete {
-  background-color: transparent;
-  border: 1px solid #333;
-  border-radius: 6px;
-  color: #555;
-  font-size: 13px;
-  padding: 6px 14px;
-  cursor: pointer;
+  color: #9090b0;
+  border-color: rgba(144, 144, 176, 0.2);
 }
 
 .btn-retry {
-  background-color: transparent;
-  border: 1px solid #333;
-  border-radius: 6px;
-  color: #888;
-  font-size: 13px;
-  padding: 6px 14px;
-  cursor: pointer;
   margin-top: 8px;
 }
 
 .thought-tag {
   display: inline-block;
   font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.tag-clear {
-  background-color: #1a2e1a;
-  color: #4caf50;
-}
-
-.tag-unclear {
-  background-color: #2e1a1a;
-  color: #ffb74d;
-}
-
-.tag-assumption {
-  background-color: #1a1a2e;
-  color: #7986cb;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .tag-belief {
-  background-color: #1a2a2e;
-  color: #4dd0e1;
+  background: rgba(77, 208, 225, 0.15);
+  color: #0097a7;
 }
 
-.tag-question {
-  background-color: #2a1a2e;
-  color: #ce93d8;
+.tag-assumption {
+  background: rgba(121, 134, 203, 0.15);
+  color: #3949ab;
+}
+
+.tag-fear {
+  background: rgba(239, 83, 80, 0.15);
+  color: #c62828;
+}
+
+.tag-desire {
+  background: rgba(255, 183, 77, 0.15);
+  color: #e65100;
+}
+
+.tag-judgment {
+  background: rgba(206, 147, 216, 0.15);
+  color: #7b1fa2;
+}
+
+.tag-pattern {
+  background: rgba(129, 199, 132, 0.15);
+  color: #2e7d32;
 }
