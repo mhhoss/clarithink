@@ -48,7 +48,24 @@
     0 10px 30px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.7);
 
+  max-width: calc(100vw - 16px);
+  width: max-content;
+  box-sizing: border-box;
+
   z-index: 500;
+}
+
+@media (max-width: 480px) {
+  .tag-bar {
+    left: 8px;
+    right: 8px;
+    transform: none;
+
+    width: auto;
+    justify-content: center;
+
+    max-width: calc(100vw - 16px);
+  }
 }
 
 .tag-pill {
@@ -126,4 +143,8 @@
 
 html {
   scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
 }
