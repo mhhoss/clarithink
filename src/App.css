@@ -27,7 +27,7 @@
 
 .tag-bar {
   position: fixed;
-  bottom: 24px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -52,7 +52,16 @@
   width: max-content;
   box-sizing: border-box;
 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  overflow-y: auto;
+
   z-index: 500;
+}
+
+.tag-bar::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 480px) {
@@ -62,9 +71,12 @@
     transform: none;
 
     width: auto;
-    justify-content: center;
+    justify-content: flex-start;
+  }
 
-    max-width: calc(100vw - 16px);
+  .tag-pill {
+    font-size: 11px;
+    padding: 6px 10px;
   }
 }
 
@@ -83,7 +95,10 @@
   color: #444;
   cursor: pointer;
   transition: all 0.2s ease;
-  min-width: 54px;
+
+  min-width: unset;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tag-pill:hover {
